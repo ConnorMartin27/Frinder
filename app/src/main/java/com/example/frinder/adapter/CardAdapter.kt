@@ -21,7 +21,6 @@ class CardAdapter(private val cards: List<Card>) : RecyclerView.Adapter<CardAdap
 
         fun bind(card: Card) {
             title.text = card.title
-            description.text = card.description
             Glide.with(itemView.context).load(card.imageUrl).into(image)
             interestsLayout.removeAllViews()
 
@@ -33,6 +32,7 @@ class CardAdapter(private val cards: List<Card>) : RecyclerView.Adapter<CardAdap
                 }
                 interestsLayout.addView(interestTextView)
             }
+            description.text = card.description
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {

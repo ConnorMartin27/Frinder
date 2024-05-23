@@ -1,38 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-<LinearLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-    android:orientation="vertical">
+    <TextView
+        android:id="@+id/card_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
 
     <ImageView
         android:id="@+id/card_image"
         android:layout_width="match_parent"
-        android:layout_height="276dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
         android:scaleType="centerCrop" />
-
-    <TextView
-        android:id="@+id/card_title"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#63A557"
-        android:drawablePadding="10dp"
-        android:paddingStart="20dp"
-        android:paddingTop="8dp"
-        android:text="Card Title"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-<TextView
-android:id="@+id/card_description"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-    android:paddingTop="4dp"
-    android:text="Card Description"
-    android:textSize="14sp" />
 
     <LinearLayout
         android:id="@+id/interests_layout"
@@ -43,6 +29,12 @@ android:layout_height="match_parent"
         android:padding="8dp"
         android:divider="?android:attr/dividerHorizontal"
         android:showDividers="middle" />
-    </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/card_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp" />
+</LinearLayout>

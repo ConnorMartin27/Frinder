@@ -20,29 +20,20 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewPager)
 
         // Add some sample data
-        cards.add(Card(1, "Bill", "Description 1", listOf("Baking","Hiking","Boxing") ,"https://images.squarespace-cdn.com/content/v1/541d14f8e4b09246971df445/1625729557397-8TTI2PX2KUF0T9SB0P0R/how-to-take-the-perfect-selfie-2.jpg"))
-        cards.add(Card(2, "Fred", "Description 2", listOf("Baking","Hiking","Boxing") ,"https://scontent.xx.fbcdn.net/v/t1.15752-9/438299701_768635185259221_2057992124936410677_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=i--pAub6gIYQ7kNvgGJpyOK&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QEofql1Qk12qaAgA4Y06_xWpdrZ45hkcdADJpCVCaGw8Q&oe=667194B9"))
-        cards.add(Card(3, "Iana", "Description 3", listOf("Baking","Hiking","Boxing") ,"https://images.squarespace-cdn.com/content/v1/541d14f8e4b09246971df445/1625729557397-8TTI2PX2KUF0T9SB0P0R/how-to-take-the-perfect-selfie-2.jpg"))
+        cards.add(Card(1, "Bill",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet nisl eget erat tincidunt, ut maximus massa congue. Pellentesque ut dapibus mauris. Pellentesque nec augue venenatis, rhoncus ante vel, tempus libero. Vestibulum id tortor placerat, auctor tellus sit amet, fermentum turpis. Morbi elementum eros id imperdiet iaculis. Etiam vel enim nulla. Duis in odio tempus, ultricies massa quis, tempor enim. Nullam nec diam id mi sodales congue quis eu metus. Vivamus malesuada erat in lorem interdum egestas. Maecenas finibus placerat dui, id malesuada eros iaculis quis. Duis bibendum hendrerit faucibus. Nam sed interdum ligula. Donec erat elit, placerat cursus vestibulum ac, lobortis ullamcorper magna. Ut non tempus ligula. Sed a velit lorem. Nulla vestibulum metus ligula. ",
+            listOf("Baking","Hiking","Boxing") ,
+            "https://st2.depositphotos.com/1011382/7489/i/450/depositphotos_74896235-stock-photo-backpacker-man-taking-selfie-on.jpg"))
+        cards.add(Card(2, "Rojan",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet nisl eget erat tincidunt, ut maximus massa congue. Pellentesque ut dapibus mauris. Pellentesque nec augue venenatis, rhoncus ante vel, tempus libero. Vestibulum id tortor placerat, auctor tellus sit amet, fermentum turpis. Morbi elementum eros id imperdiet iaculis. Etiam vel enim nulla. Duis in odio tempus, ultricies massa quis, tempor enim. Nullam nec diam id mi sodales congue quis eu metus. Vivamus malesuada erat in lorem interdum egestas. Maecenas finibus placerat dui, id malesuada eros iaculis quis. Duis bibendum hendrerit faucibus. Nam sed interdum ligula. Donec erat elit, placerat cursus vestibulum ac, lobortis ullamcorper magna. Ut non tempus ligula. Sed a velit lorem. Nulla vestibulum metus ligula. ",
+            listOf("Coffee","Cute Things","Eating") ,
+            "https://st2.depositphotos.com/2015659/6496/i/450/depositphotos_64961499-stock-photo-beautiful-young-woman-selfie-in.jpg"))
+        cards.add(Card(3, "Iana", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet nisl eget erat tincidunt, ut maximus massa congue. Pellentesque ut dapibus mauris. Pellentesque nec augue venenatis, rhoncus ante vel, tempus libero. Vestibulum id tortor placerat, auctor tellus sit amet, fermentum turpis. Morbi elementum eros id imperdiet iaculis. Etiam vel enim nulla. Duis in odio tempus, ultricies massa quis, tempor enim. Nullam nec diam id mi sodales congue quis eu metus. Vivamus malesuada erat in lorem interdum egestas. Maecenas finibus placerat dui, id malesuada eros iaculis quis. Duis bibendum hendrerit faucibus. Nam sed interdum ligula. Donec erat elit, placerat cursus vestibulum ac, lobortis ullamcorper magna. Ut non tempus ligula. Sed a velit lorem. Nulla vestibulum metus ligula. ",
+            listOf("Doing Stuff","Swordfighting","Driving", "IT") ,
+            "https://images.squarespace-cdn.com/content/v1/541d14f8e4b09246971df445/1625729557397-8TTI2PX2KUF0T9SB0P0R/how-to-take-the-perfect-selfie-2.jpg"))
 
         cardAdapter = CardAdapter(cards)
         viewPager.adapter = cardAdapter
 
-        // Optional: Add page transformer for swipe animation
-        viewPager.setPageTransformer { page, position ->
-            page.translationX = -position * page.width
-            page.alpha = 0f + (1 - kotlin.math.abs(position))
-        }
-
-        // Handle swipe actions
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                // Handle card swipe actions here
-                // e.g., log card swiped left or right based on position
-                if (position == cardAdapter.itemCount - 1) {
-                    // Perform an action when the user reaches the end of the list
-                }
-            }
-        })
     }
 }

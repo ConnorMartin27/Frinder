@@ -3,6 +3,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,9 +34,17 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Card data = dataList.get(position);
         holder.cardTitle.setText(data.getTitle());
+        holder.interestsLayout.removeAllViews();
+        for (String interest : data.getInterests()) {
+            TextView interestTextView = new TextView(holder.itemView.getContext());
+            interestTextView.setText(interest);
+            interestTextView.setPadding(8, 8, 8, 8);
+            interestTextView.setBackground(holder.itemView.getContext().getDrawable(R.drawable.interest_background));
+            holder.interestsLayout.addView(interestTextView);
+        }
         holder.cardDescription.setText(data.getDescription());
-        // Load image using your preferred image loading library
     }
+
 
     @Override
     public int getItemCount() {
@@ -45,13 +54,15 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView cardImage;
         TextView cardTitle;
-        TextView cardDescription;
-
+        LinearLayout interestsLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cardImage = itemView.findViewById(R.id.card_image);
             cardTitle = itemView.findViewById(R.id.card_title);
             cardDescription = itemView.findViewById(R.id.card_description);
+            interestsLayout = itemView.findViewById(R.id.interests_layout);
         }
+
+        TextView cardDescription;
     }
 }

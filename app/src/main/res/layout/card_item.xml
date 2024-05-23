@@ -8,20 +8,23 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
     android:orientation="vertical">
 
-<ImageView
-android:id="@+id/card_image"
-android:layout_width="match_parent"
-android:layout_height="200dp"
-    android:scaleType="centerCrop" />
+    <ImageView
+        android:id="@+id/card_image"
+        android:layout_width="match_parent"
+        android:layout_height="276dp"
+        android:scaleType="centerCrop" />
 
-<TextView
-android:id="@+id/card_title"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-    android:paddingTop="8dp"
-    android:text="Card Title"
-    android:textSize="18sp"
-    android:textStyle="bold" />
+    <TextView
+        android:id="@+id/card_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#63A557"
+        android:drawablePadding="10dp"
+        android:paddingStart="20dp"
+        android:paddingTop="8dp"
+        android:text="Card Title"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 <TextView
 android:id="@+id/card_description"
@@ -30,6 +33,16 @@ android:layout_height="match_parent"
     android:paddingTop="4dp"
     android:text="Card Description"
     android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/interests_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:divider="?android:attr/dividerHorizontal"
+        android:showDividers="middle" />
     </LinearLayout>
 
     </androidx.cardview.widget.CardView>

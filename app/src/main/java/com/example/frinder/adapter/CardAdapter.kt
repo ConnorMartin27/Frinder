@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -16,15 +17,24 @@ class CardAdapter(private val cards: List<Card>) : RecyclerView.Adapter<CardAdap
         private val title: TextView = itemView.findViewById(R.id.card_title)
         private val description: TextView = itemView.findViewById(R.id.card_description)
         private val image: ImageView = itemView.findViewById(R.id.card_image)
+        private val interestsLayout: LinearLayout = itemView.findViewById(R.id.interests_layout)
 
         fun bind(card: Card) {
             title.text = card.title
             description.text = card.description
             Glide.with(itemView.context).load(card.imageUrl).into(image)
+            interestsLayout.removeAllViews()
 
+            for (interest in card.interests) {
+                val interestTextView = TextView(itemView.context).apply {
+                    text = interest
+                    setPadding(8, 8, 8, 8)
+                    background = itemView.context.getDrawable(R.drawable.interest_background)
+                }
+                interestsLayout.addView(interestTextView)
+            }
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_item, parent, false)
         view.layoutParams = ViewGroup.LayoutParams(

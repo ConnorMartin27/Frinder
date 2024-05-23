@@ -20,9 +20,9 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewPager)
 
         // Add some sample data
-        cards.add(Card(1, "Title 1", "Description 1", "https://images.squarespace-cdn.com/content/v1/541d14f8e4b09246971df445/1625729557397-8TTI2PX2KUF0T9SB0P0R/how-to-take-the-perfect-selfie-2.jpg"))
-        cards.add(Card(2, "Title 2", "Description 2", "https://scontent.xx.fbcdn.net/v/t1.15752-9/438299701_768635185259221_2057992124936410677_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=i--pAub6gIYQ7kNvgGJpyOK&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QEofql1Qk12qaAgA4Y06_xWpdrZ45hkcdADJpCVCaGw8Q&oe=667194B9"))
-        cards.add(Card(3, "Title 3", "Description 3", "https://images.squarespace-cdn.com/content/v1/541d14f8e4b09246971df445/1625729557397-8TTI2PX2KUF0T9SB0P0R/how-to-take-the-perfect-selfie-2.jpg"))
+        cards.add(Card(1, "Bill", "Description 1", listOf("Baking","Hiking","Boxing") ,"https://images.squarespace-cdn.com/content/v1/541d14f8e4b09246971df445/1625729557397-8TTI2PX2KUF0T9SB0P0R/how-to-take-the-perfect-selfie-2.jpg"))
+        cards.add(Card(2, "Fred", "Description 2", listOf("Baking","Hiking","Boxing") ,"https://scontent.xx.fbcdn.net/v/t1.15752-9/438299701_768635185259221_2057992124936410677_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=i--pAub6gIYQ7kNvgGJpyOK&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QEofql1Qk12qaAgA4Y06_xWpdrZ45hkcdADJpCVCaGw8Q&oe=667194B9"))
+        cards.add(Card(3, "Iana", "Description 3", listOf("Baking","Hiking","Boxing") ,"https://images.squarespace-cdn.com/content/v1/541d14f8e4b09246971df445/1625729557397-8TTI2PX2KUF0T9SB0P0R/how-to-take-the-perfect-selfie-2.jpg"))
 
         cardAdapter = CardAdapter(cards)
         viewPager.adapter = cardAdapter
